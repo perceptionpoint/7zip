@@ -21,6 +21,7 @@ Comment: Some parts come from the "LZFSE compression library"
 
 Files: debian/*
 Copyright: 2021 Collabora, Ltd.
+           2021 YOKOTA Hiroshi <yokota.hgml@gmail.com>
 License: LGPL-2.1+
 
 License: LGPL-2.1+

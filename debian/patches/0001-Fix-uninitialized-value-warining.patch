@@ -1,0 +1,21 @@
+From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
+Date: Sun, 9 May 2021 16:15:32 +0900
+Subject: Fix uninitialized value warining
+
+---
+ CPP/7zip/Common/OffsetStream.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CPP/7zip/Common/OffsetStream.cpp b/CPP/7zip/Common/OffsetStream.cpp
+index 2da7098..cddb668 100644
+--- a/CPP/7zip/Common/OffsetStream.cpp
++++ b/CPP/7zip/Common/OffsetStream.cpp
+@@ -20,7 +20,7 @@ STDMETHODIMP COffsetOutStream::Write(const void *data, UInt32 size, UInt32 *proc
+ 
+ STDMETHODIMP COffsetOutStream::Seek(Int64 offset, UInt32 seekOrigin, UInt64 *newPosition)
+ {
+-  UInt64 absoluteNewPosition;
++  UInt64 absoluteNewPosition = 0;
+   if (seekOrigin == STREAM_SEEK_SET)
+   {
+     if (offset < 0)

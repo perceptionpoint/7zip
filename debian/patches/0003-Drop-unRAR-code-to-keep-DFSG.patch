@@ -1,0 +1,54 @@
+From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
+Date: Wed, 19 May 2021 01:03:48 +0900
+Subject: Drop unRAR code to keep DFSG
+
+---
+ CPP/7zip/Bundles/Format7zF/Arc_gcc.mak | 14 --------------
+ 1 file changed, 14 deletions(-)
+
+diff --git a/CPP/7zip/Bundles/Format7zF/Arc_gcc.mak b/CPP/7zip/Bundles/Format7zF/Arc_gcc.mak
+index 8690099..3b07565 100644
+--- a/CPP/7zip/Bundles/Format7zF/Arc_gcc.mak
++++ b/CPP/7zip/Bundles/Format7zF/Arc_gcc.mak
+@@ -173,10 +173,6 @@ NSIS_OBJS = \
+   $O/NsisIn.o \
+   $O/NsisRegister.o \
+ 
+-RAR_OBJS = \
+-  $O/RarHandler.o \
+-  $O/Rar5Handler.o \
+-
+ TAR_OBJS = \
+   $O/TarHandler.o \
+   $O/TarHandlerOut.o \
+@@ -243,12 +239,6 @@ COMPRESS_OBJS = \
+   $O/PpmdRegister.o \
+   $O/PpmdZip.o \
+   $O/QuantumDecoder.o \
+-  $O/Rar1Decoder.o \
+-  $O/Rar2Decoder.o \
+-  $O/Rar3Decoder.o \
+-  $O/Rar3Vm.o \
+-  $O/Rar5Decoder.o \
+-  $O/RarCodecsRegister.o \
+   $O/ShrinkDecoder.o \
+   $O/XpressDecoder.o \
+   $O/XzDecoder.o \
+@@ -267,9 +257,6 @@ CRYPTO_OBJS = \
+   $O/MyAesReg.o \
+   $O/Pbkdf2HmacSha1.o \
+   $O/RandGen.o \
+-  $O/Rar20Crypto.o \
+-  $O/Rar5Aes.o \
+-  $O/RarAes.o \
+   $O/WzAes.o \
+   $O/ZipCrypto.o \
+   $O/ZipStrong.o \
+@@ -334,7 +321,6 @@ ARC_OBJS = \
+   $(COM_OBJS) \
+   $(ISO_OBJS) \
+   $(NSIS_OBJS) \
+-  $(RAR_OBJS) \
+   $(TAR_OBJS) \
+   $(UDF_OBJS) \
+   $(WIM_OBJS) \
