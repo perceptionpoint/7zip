@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+uscan_out=$(uscan --safe --force-download --verbose | grep -e 'Successfully downloaded package' -e 'Not downloading, using existing file')
+tarball=$(echo "$uscan_out" | grep "\-src\.7z" | sed 's/^.*\(7z.*\-src\.7z\).*$/\1/')
+tarball_base=$(echo "$tarball" | sed 's/\.7z//')
+
+arepack ../${tarball} ../${tarball_base}.tar.xz
+mk-origtargz ../${tarball_base}.tar.xz
+

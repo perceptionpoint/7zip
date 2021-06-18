@@ -1,0 +1,13 @@
+Index: 7zip/CPP/7zip/7zip_gcc.mak
+===================================================================
+--- 7zip.orig/CPP/7zip/7zip_gcc.mak
++++ 7zip/CPP/7zip/7zip_gcc.mak
+@@ -13,7 +13,7 @@ PROGPATH = $(O)/$(PROG)
+ 
+ 
+ ifneq ($(CC), xlc)
+-CFLAGS_WARN_WALL = -Wall -Werror -Wextra
++CFLAGS_WARN_WALL = -Wall -Wextra
+ endif
+ 
+ # for object file
