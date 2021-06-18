@@ -8,6 +8,11 @@ Files: *
 Copyright: 1999-2021 Igor Pavlov
 License: LGPL-2.1+
 
+Files: FIXME
+Copyright: No copyright claimed
+License: public-domain
+ Igor Pavlov : Public domain
+
 Files: CPP/7zip/Compress/LzfseDecoder.cpp
 Copyright: 2015-2017, Apple Inc.
            2018 Igor Pavlov
