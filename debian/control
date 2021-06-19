@@ -1,7 +1,8 @@
 Source: 7zip
 Section: utils
 Priority: optional
-Maintainer: Dylan Aïssi <daissi@debian.org>
+Maintainer: YOKOTA Hiroshi <yokota.hgml@gmail.com>
+Uploaders: Dylan Aïssi <daissi@debian.org>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.5.1
 Rules-Requires-Root: no
