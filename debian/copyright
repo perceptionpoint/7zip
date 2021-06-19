@@ -1,5 +1,5 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Igor Pavlov
+Upstream-Name: 7-Zip
 Source: https://www.7-zip.org/
 Files-Excluded: CPP/7zip/Compress/Rar*
 Comment: RAR code is under the non-free "unRAR license restriction"
