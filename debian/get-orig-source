@@ -3,12 +3,12 @@
 set -eu
 
 uscan_out=$(uscan --safe --force-download --verbose | grep -e 'Successfully downloaded package' -e 'Not downloading, using existing file')
-tarball=$(echo "$uscan_out" | grep "\-src\.7z" | sed 's/^.*\(7z.*\-src\.7z\).*$/\1/')
-tarball_base=$(echo "$tarball" | sed 's/\.7z//')
+szipball=$(echo "$uscan_out" | grep "\-src\.7z" | sed 's/^.*\(7z.*\-src\.7z\).*$/\1/')
+tarball_base=$(echo "$szipball" | sed 's/\.7z//')
 
 d=$(mktemp -d)
 
-7z x -o"${d}" ../${tarball}
+7z x -o"${d}" ../${szipball}
 
 unset POSIXLY_CORRECT
 tar --sort=name \
