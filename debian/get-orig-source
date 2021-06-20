@@ -10,11 +10,9 @@ d=$(mktemp -d)
 
 7z x -o"${d}" ../${tarball}
 
-default_epoch=$(date --date="$(dpkg-parsechangelog -SDate)" "+%s")
-
 unset POSIXLY_CORRECT
 tar --sort=name \
-    --mtime="@${SOURCE_DATE_EPOCH:-${default_epoch}}" \
+    --mtime="@${SOURCE_DATE_EPOCH:-$(dpkg-parsechangelog -STimestamp)}" \
     --owner=0 --group=0 --numeric-owner \
     --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
     --directory="${d}" --xz -cf ../${tarball_base}.tar.xz .
