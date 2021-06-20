@@ -1,3 +1,4 @@
+# -*- mode: conf -*-
 version=4
 opts="dversionmangle=s/\+dfsg\d*$//, \
       pgpmode=none" \
