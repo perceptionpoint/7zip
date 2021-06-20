@@ -10,6 +10,7 @@ d=$(mktemp -d)
 
 7z x -o"${d}" ../${szipball}
 
+# Make reproducible archive
 unset POSIXLY_CORRECT
 tar --sort=name \
     --mtime="@${SOURCE_DATE_EPOCH:-$(dpkg-parsechangelog -STimestamp)}" \
