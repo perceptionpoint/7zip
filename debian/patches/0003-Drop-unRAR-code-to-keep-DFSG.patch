@@ -2,6 +2,7 @@ From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
 Date: Wed, 19 May 2021 01:03:48 +0900
 Subject: Drop unRAR code to keep DFSG
 
+Forwarded: not-needed
 ---
  CPP/7zip/Bundles/Format7zF/Arc_gcc.mak | 14 --------------
  1 file changed, 14 deletions(-)

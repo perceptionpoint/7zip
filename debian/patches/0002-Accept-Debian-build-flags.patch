@@ -2,6 +2,7 @@ From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
 Date: Sun, 9 May 2021 22:39:21 +0900
 Subject: Accept Debian build flags
 
+Forwarded: not-needed
 ---
  CPP/7zip/7zip_gcc.mak | 8 ++++----
  1 file changed, 4 insertions(+), 4 deletions(-)
