@@ -1,5 +1,5 @@
-#!/bin/sh -e
-# Need "atool" package to use arepack(1).
+#!/bin/sh -eu
+# Needs "atool" package to use arepack(1).
 
 uscan_out=$(uscan --safe --force-download --verbose | grep -e 'Successfully downloaded package' -e 'Not downloading, using existing file')
 tarball=$(echo "$uscan_out" | grep "\-src\.7z" | sed 's/^.*\(7z.*\-src\.7z\).*$/\1/')
