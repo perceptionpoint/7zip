@@ -1,0 +1,8 @@
+# -*- mode: conf -*-
+
+Features: test-name=smoke
+Test-Command: 7zz
+Restrictions: superficial
+
+Features: test-name=benchmark
+Test-Command: 7zz b "-mm=*" "-mmt=*" -bt

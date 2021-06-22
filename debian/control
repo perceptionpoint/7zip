@@ -12,6 +12,7 @@ Vcs-Browser: https://salsa.debian.org/debian/7zip
 
 Package: 7zip
 Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: 7-Zip file archiver with a high compression ratio
  7-Zip is a file archiver with a high compression ratio. The main features

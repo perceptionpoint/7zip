@@ -1,0 +1,7 @@
+*~
+
+/.debhelper/
+/debhelper-build-stamp
+/files
+/7zip.substvars
+/7zip/
