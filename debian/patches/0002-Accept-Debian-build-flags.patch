@@ -8,10 +8,10 @@ Forwarded: not-needed
  1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/CPP/7zip/7zip_gcc.mak b/CPP/7zip/7zip_gcc.mak
-index 46732ee..0861808 100644
+index bef6a64..12cd42e 100644
 --- a/CPP/7zip/7zip_gcc.mak
 +++ b/CPP/7zip/7zip_gcc.mak
-@@ -70,7 +70,7 @@ endif
+@@ -72,7 +72,7 @@ endif
  
  else
  
@@ -20,7 +20,7 @@ index 46732ee..0861808 100644
  # -s is not required for clang, do we need it for GGC ???
  # -s
  
-@@ -118,7 +118,7 @@ endif
+@@ -120,7 +120,7 @@ endif
  
  
  
@@ -29,7 +29,7 @@ index 46732ee..0861808 100644
  
  
  ifdef IS_MINGW
-@@ -146,7 +146,7 @@ CXX_WARN_FLAGS =
+@@ -148,7 +148,7 @@ CXX_WARN_FLAGS =
  #-Wno-invalid-offsetof
  #-Wno-reorder
  
@@ -38,7 +38,7 @@ index 46732ee..0861808 100644
  
  all: $(O) $(PROGPATH)
  
-@@ -154,7 +154,7 @@ $(O):
+@@ -156,7 +156,7 @@ $(O):
  	$(MY_MKDIR) $(O)
  
  $(PROGPATH): $(OBJS)

@@ -8,10 +8,10 @@ Forwarded: not-needed
  1 file changed, 14 deletions(-)
 
 diff --git a/CPP/7zip/Bundles/Format7zF/Arc_gcc.mak b/CPP/7zip/Bundles/Format7zF/Arc_gcc.mak
-index 8690099..3b07565 100644
+index 18fa41b..82da04b 100644
 --- a/CPP/7zip/Bundles/Format7zF/Arc_gcc.mak
 +++ b/CPP/7zip/Bundles/Format7zF/Arc_gcc.mak
-@@ -173,10 +173,6 @@ NSIS_OBJS = \
+@@ -175,10 +175,6 @@ NSIS_OBJS = \
    $O/NsisIn.o \
    $O/NsisRegister.o \
  
@@ -22,7 +22,7 @@ index 8690099..3b07565 100644
  TAR_OBJS = \
    $O/TarHandler.o \
    $O/TarHandlerOut.o \
-@@ -243,12 +239,6 @@ COMPRESS_OBJS = \
+@@ -245,12 +241,6 @@ COMPRESS_OBJS = \
    $O/PpmdRegister.o \
    $O/PpmdZip.o \
    $O/QuantumDecoder.o \
@@ -35,7 +35,7 @@ index 8690099..3b07565 100644
    $O/ShrinkDecoder.o \
    $O/XpressDecoder.o \
    $O/XzDecoder.o \
-@@ -267,9 +257,6 @@ CRYPTO_OBJS = \
+@@ -269,9 +259,6 @@ CRYPTO_OBJS = \
    $O/MyAesReg.o \
    $O/Pbkdf2HmacSha1.o \
    $O/RandGen.o \
@@ -45,7 +45,7 @@ index 8690099..3b07565 100644
    $O/WzAes.o \
    $O/ZipCrypto.o \
    $O/ZipStrong.o \
-@@ -334,7 +321,6 @@ ARC_OBJS = \
+@@ -336,7 +323,6 @@ ARC_OBJS = \
    $(COM_OBJS) \
    $(ISO_OBJS) \
    $(NSIS_OBJS) \

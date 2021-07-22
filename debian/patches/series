@@ -1,3 +1,2 @@
-0001-Fix-uninitialized-value-warining.patch
 0002-Accept-Debian-build-flags.patch
 0003-Drop-unRAR-code-to-keep-DFSG.patch
