@@ -1,3 +1,9 @@
+7zip (21.03~beta+dfsg-1) unstable; urgency=medium
+
+  * New upstream version 21.03~beta+dfsg
+
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Thu, 22 Jul 2021 20:55:46 +0900
+
 7zip (21.02~alpha+dfsg-1) unstable; urgency=medium
 
   * Initial release. (Closes: #988689)
