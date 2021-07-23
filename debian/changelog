@@ -1,9 +1,13 @@
 7zip (21.03~beta+dfsg-1) unstable; urgency=medium
 
+  [ YOKOTA Hiroshi ]
   * New upstream version 21.03~beta+dfsg
   * Use pristine-tar by default
   * Refresh patch queue
   * Renumber patch queue
+
+  [ Dylan Aïssi ]
+  * Update d/copyright for new upstream files
 
  -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Thu, 22 Jul 2021 21:47:30 +0900
 

@@ -13,6 +13,7 @@ Files: Asm/arm64/7zAsm.S
        Asm/x86/7zAsm.asm
        Asm/x86/7zCrcOpt.asm
        Asm/x86/AesOpt.asm
+       Asm/x86/LzFindOpt.asm
        Asm/x86/LzmaDecOpt.asm
        Asm/x86/Sha1Opt.asm
        Asm/x86/Sha256Opt.asm
@@ -62,6 +63,7 @@ Files: Asm/arm64/7zAsm.S
        C/LzFind.h
        C/LzFindMt.c
        C/LzFindMt.h
+       C/LzFindOpt.c
        C/LzHash.h
        C/Lzma2Dec.c
        C/Lzma2Dec.h
