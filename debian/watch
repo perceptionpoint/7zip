@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 version=4
-opts="dversionmangle=s/(\d?\d)\.(\d\d)(?:~(?:alpha|beta))?\+dfsg\d*/$1.$2/, \
-      uversionmangle=s/(\d?\d)(\d\d)/$1.$2/, \
+opts="dversionmangle=s/(\d\d)\.(\d\d)(?:~(?:alpha|beta))?\+dfsg\d*/$1.$2/, \
+      uversionmangle=s/(\d\d)(\d\d)/$1.$2/, \
       pgpmode=none" \
-https://www.7-zip.org/download.html a/7z(\d?\d\d\d)-src.7z
+https://www.7-zip.org/download.html a/7z(\d\d\d\d)-src\.7z
