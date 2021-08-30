@@ -6,7 +6,13 @@ export DEB_BUILD_MAINT_OPTIONS=hardening=+all reproducible=+all
 	dh $@
 
 override_dh_auto_build:
-	$(MAKE) -C CPP/7zip/Bundles/Alone2 -f ../../cmpl_gcc.mak DEB_CFLAGS="$(CFLAGS)" DEB_CXXFLAGS="$(CXXFLAGS)" DEB_CPPFLAGS="$(CPPFLAGS)" DEB_LDFLAGS="$(LDFLAGS)" CC="$(DEB_HOST_GNU_TYPE)-gcc" CXX="$(DEB_HOST_GNU_TYPE)-g++"
+	$(MAKE) -C CPP/7zip/Bundles/Alone2 -f ../../cmpl_gcc.mak \
+		CC="$(DEB_HOST_GNU_TYPE)-gcc" \
+		CXX="$(DEB_HOST_GNU_TYPE)-g++" \
+		DEB_CFLAGS="$(CFLAGS)" \
+		DEB_CXXFLAGS="$(CXXFLAGS)" \
+		DEB_CPPFLAGS="$(CPPFLAGS)" \
+		DEB_LDFLAGS="$(LDFLAGS)"
 
 override_dh_auto_clean:
 	$(MAKE) -C CPP/7zip/Bundles/Alone2 -f ../../cmpl_gcc.mak clean
