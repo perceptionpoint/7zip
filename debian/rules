@@ -7,8 +7,7 @@ export DEB_BUILD_MAINT_OPTIONS=hardening=+all reproducible=+all
 
 override_dh_auto_build:
 	$(MAKE) -C CPP/7zip/Bundles/Alone2 -f ../../cmpl_gcc.mak \
-		CC="$(DEB_HOST_GNU_TYPE)-gcc" \
-		CXX="$(DEB_HOST_GNU_TYPE)-g++" \
+		CROSS_COMPILE="$(DEB_HOST_GNU_TYPE)-" \
 		DEB_CFLAGS="$(CFLAGS)" \
 		DEB_CXXFLAGS="$(CXXFLAGS)" \
 		DEB_CPPFLAGS="$(CPPFLAGS)" \
