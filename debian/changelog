@@ -1,3 +1,26 @@
+7zip (21.03~beta+dfsg-2) unstable; urgency=medium
+
+  * Update versioning scheme in watch file
+  * Simplify version scanner
+  * Use more Perl regex syntax
+  * Refactor regex
+  * Upgrade Debian standards version
+  * Update man page
+  * Use synopsis macro
+  * Use more macros
+  * Add web title name
+  * Allow cross build
+  * Reorder variables
+  * Use upstream value for cross compilation
+  * Use GCC 10 warning options
+  * Add architecture specific compiler options
+  * Allow unused parameter when big endian architectures
+  * Use pre-processor macro to disable NEON ABI
+  * Add PATH_MAX fix for GNU Hurd
+  * Update to better PATH_MAX fix
+
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Wed, 15 Sep 2021 00:54:02 +0900
+
 7zip (21.03~beta+dfsg-1) unstable; urgency=medium
 
   [ YOKOTA Hiroshi ]
