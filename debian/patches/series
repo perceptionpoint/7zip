@@ -3,3 +3,4 @@
 0003-Use-GCC-10-warning-options.patch
 0004-Allow-unused-parameter-when-big-endian-architectures.patch
 0005-Disable-NEON-ABI-of-armel-architecture.patch
+0006-Trivial-fix-for-PATH_MAX.patch
