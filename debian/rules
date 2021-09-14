@@ -2,6 +2,8 @@
 
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all reproducible=+all
 
+include debian/arch-options.mak
+
 %:
 	dh $@
 
