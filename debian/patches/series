@@ -1,3 +1,4 @@
 0001-Accept-Debian-build-flags.patch
 0002-Drop-unRAR-code-to-keep-DFSG.patch
 0003-Use-GCC-10-warning-options.patch
+0004-Allow-unused-parameter-when-big-endian-architectures.patch
