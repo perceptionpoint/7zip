@@ -9,7 +9,7 @@ This fix helps GNU Hurd.
  2 files changed, 10 insertions(+), 20 deletions(-)
 
 diff --git a/CPP/Windows/FileDir.cpp b/CPP/Windows/FileDir.cpp
-index de8ec63..78469d2 100644
+index de8ec63..2e902f2 100644
 --- a/CPP/Windows/FileDir.cpp
 +++ b/CPP/Windows/FileDir.cpp
 @@ -4,6 +4,7 @@
@@ -38,12 +38,12 @@ index de8ec63..78469d2 100644
 -  path = fas2fs(s);
 +  path = fas2fs(res);
 +
-+  free(res);
++  std::free(res);
    return true;
  }
  
 diff --git a/CPP/Windows/FileName.cpp b/CPP/Windows/FileName.cpp
-index c3ff854..9260fc4 100644
+index c3ff854..c573537 100644
 --- a/CPP/Windows/FileName.cpp
 +++ b/CPP/Windows/FileName.cpp
 @@ -3,6 +3,7 @@
@@ -72,7 +72,7 @@ index c3ff854..9260fc4 100644
 -  path = GetUnicodeString(s);
 +  path = GetUnicodeString(res);
 +
-+  free(res);
++  std::free(res);
    return true;
  
    #endif
