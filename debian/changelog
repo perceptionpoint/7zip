@@ -1,3 +1,9 @@
+7zip (21.03~beta+dfsg-4) unstable; urgency=medium
+
+  * Add another unused parameter to patch file
+
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Wed, 15 Sep 2021 14:29:19 +0900
+
 7zip (21.03~beta+dfsg-3) unstable; urgency=medium
 
   * Simplify "unused" attributes code
