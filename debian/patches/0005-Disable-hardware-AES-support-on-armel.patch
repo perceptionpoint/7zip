@@ -1,21 +1,23 @@
 From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
 Date: Tue, 14 Sep 2021 23:51:04 +0900
-Subject: Disable hardware AES support on armel
+Subject: Disable hardware acceleration support on armel
 
 armel dose not supports NEON instructions.
 ---
- C/AesOpt.c | 2 ++
- 1 file changed, 2 insertions(+)
+ C/AesOpt.c    | 2 ++
+ C/Sha1Opt.c   | 2 ++
+ C/Sha256Opt.c | 2 ++
+ 3 files changed, 6 insertions(+)
 
 diff --git a/C/AesOpt.c b/C/AesOpt.c
-index 1bdc9a8..59deaa2 100644
+index 1bdc9a8..bce0410 100644
 --- a/C/AesOpt.c
 +++ b/C/AesOpt.c
 @@ -508,6 +508,7 @@ VAES_COMPAT_STUB (AesCtr_Code_HW)
  
  #elif defined(MY_CPU_ARM_OR_ARM64) && defined(MY_CPU_LE)
  
-+ #ifndef DEBIAN_NO_HW_AES
++ #ifndef DEBIAN_NO_HW_ACCEL
    #if defined(__clang__)
      #if (__clang_major__ >= 8) // fix that check
        #define USE_HW_AES
@@ -26,4 +28,44 @@ index 1bdc9a8..59deaa2 100644
 + #endif
  
  #ifdef USE_HW_AES
+ 
+diff --git a/C/Sha1Opt.c b/C/Sha1Opt.c
+index dcedfbc..805bd19 100644
+--- a/C/Sha1Opt.c
++++ b/C/Sha1Opt.c
+@@ -214,6 +214,7 @@ void MY_FAST_CALL Sha1_UpdateBlocks_HW(UInt32 state[5], const Byte *data, size_t
+ 
+ #elif defined(MY_CPU_ARM_OR_ARM64)
+ 
++ #ifndef DEBIAN_NO_HW_ACCEL
+   #if defined(__clang__)
+     #if (__clang_major__ >= 8) // fix that check
+       #define USE_HW_SHA
+@@ -227,6 +228,7 @@ void MY_FAST_CALL Sha1_UpdateBlocks_HW(UInt32 state[5], const Byte *data, size_t
+       #define USE_HW_SHA
+     #endif
+   #endif
++ #endif
+ 
+ #ifdef USE_HW_SHA
+ 
+diff --git a/C/Sha256Opt.c b/C/Sha256Opt.c
+index cc8c53e..65bf7b6 100644
+--- a/C/Sha256Opt.c
++++ b/C/Sha256Opt.c
+@@ -214,6 +214,7 @@ void MY_FAST_CALL Sha256_UpdateBlocks_HW(UInt32 state[8], const Byte *data, size
+ 
+ #elif defined(MY_CPU_ARM_OR_ARM64)
+ 
++ #ifndef DEBIAN_NO_HW_ACCEL
+   #if defined(__clang__)
+     #if (__clang_major__ >= 8) // fix that check
+       #define USE_HW_SHA
+@@ -227,6 +228,7 @@ void MY_FAST_CALL Sha256_UpdateBlocks_HW(UInt32 state[8], const Byte *data, size
+       #define USE_HW_SHA
+     #endif
+   #endif
++ #endif
+ 
+ #ifdef USE_HW_SHA
  
