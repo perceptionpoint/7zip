@@ -7,7 +7,7 @@ Subject: Allow unused parameter when big endian architectures
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/CPP/7zip/Archive/HfsHandler.cpp b/CPP/7zip/Archive/HfsHandler.cpp
-index 596cab6..e1bc581 100644
+index 596cab6..9061319 100644
 --- a/CPP/7zip/Archive/HfsHandler.cpp
 +++ b/CPP/7zip/Archive/HfsHandler.cpp
 @@ -1492,7 +1492,7 @@ STDMETHODIMP CHandler::GetParent(UInt32 index, UInt32 *parent, UInt32 *parentTyp
@@ -15,7 +15,7 @@ index 596cab6..e1bc581 100644
  }
  
 -STDMETHODIMP CHandler::GetRawProp(UInt32 index, PROPID propID, const void **data, UInt32 *dataSize, UInt32 *propType)
-+STDMETHODIMP CHandler::GetRawProp(UInt32 index, [[maybe_unused]] PROPID propID, const void **data, UInt32 *dataSize, UInt32 *propType)
++STDMETHODIMP CHandler::GetRawProp([[maybe_unused]] UInt32 index, [[maybe_unused]] PROPID propID, const void **data, UInt32 *dataSize, UInt32 *propType)
  {
    *data = NULL;
    *dataSize = 0;
