@@ -4,7 +4,7 @@ c_flags =
 cxx_flags =
 
 ifeq      (armel, $(DEB_HOST_ARCH))
-  c_flags += -DDEBIAN_NO_NEON=1
+  c_flags += -DDEBIAN_NO_HW_AES=1
 else ifeq (kfreebsd-amd64, $(DEB_HOST_ARCH))
   cxx_flags += -Wno-error=conversion
 else ifeq (kfreebsd-i386, $(DEB_HOST_ARCH))

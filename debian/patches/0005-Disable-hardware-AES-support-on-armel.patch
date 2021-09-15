@@ -1,0 +1,29 @@
+From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
+Date: Tue, 14 Sep 2021 23:51:04 +0900
+Subject: Disable hardware AES support on armel
+
+armel dose not supports NEON instructions.
+---
+ C/AesOpt.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/C/AesOpt.c b/C/AesOpt.c
+index 1bdc9a8..59deaa2 100644
+--- a/C/AesOpt.c
++++ b/C/AesOpt.c
+@@ -508,6 +508,7 @@ VAES_COMPAT_STUB (AesCtr_Code_HW)
+ 
+ #elif defined(MY_CPU_ARM_OR_ARM64) && defined(MY_CPU_LE)
+ 
++ #ifndef DEBIAN_NO_HW_AES
+   #if defined(__clang__)
+     #if (__clang_major__ >= 8) // fix that check
+       #define USE_HW_AES
+@@ -521,6 +522,7 @@ VAES_COMPAT_STUB (AesCtr_Code_HW)
+       #define USE_HW_AES
+     #endif
+   #endif
++ #endif
+ 
+ #ifdef USE_HW_AES
+ 
