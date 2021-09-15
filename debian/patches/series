@@ -4,3 +4,4 @@
 0004-Allow-unused-parameter-when-big-endian-architectures.patch
 0005-Disable-hardware-AES-support-on-armel.patch
 0006-Use-getcwd-3-POSIX-extension-to-avoid-PATH_MAX-macro.patch
+0007-Define-UTIME_OMIT-if-defined-yet.patch

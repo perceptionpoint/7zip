@@ -1,0 +1,24 @@
+From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
+Date: Wed, 15 Sep 2021 20:54:20 +0900
+Subject: Define UTIME_OMIT if defined yet
+
+It helps kfreebsd-* builds.
+---
+ CPP/Windows/FileDir.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/CPP/Windows/FileDir.cpp b/CPP/Windows/FileDir.cpp
+index 2e902f2..b10cee6 100644
+--- a/CPP/Windows/FileDir.cpp
++++ b/CPP/Windows/FileDir.cpp
+@@ -892,6 +892,10 @@ bool GetCurrentDir(FString &path)
+ }
+ 
+ 
++#ifndef UTIME_OMIT
++#  define UTIME_OMIT -2
++#endif
++
+ static void FILETME_To_timespec(const FILETIME *ft, timespec &ts)
+ {
+   if (ft)
