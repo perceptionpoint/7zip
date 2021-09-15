@@ -1,6 +1,6 @@
 From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
 Date: Wed, 15 Sep 2021 20:54:20 +0900
-Subject: Define UTIME_OMIT if defined yet
+Subject: Define UTIME_OMIT if not defined yet
 
 It helps kfreebsd-* builds.
 ---
