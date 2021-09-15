@@ -9,6 +9,8 @@ else ifeq (kfreebsd-amd64, $(DEB_HOST_ARCH))
   cxx_flags += -Wno-error=conversion
 else ifeq (kfreebsd-i386, $(DEB_HOST_ARCH))
   cxx_flags += -Wno-error=conversion
+else ifeq (hurd-i386, $(DEB_HOST_ARCH))
+  cxx_flags += -Wno-error=conversion
 endif
 
 ifneq ($(c_flags),)
