@@ -1,0 +1,23 @@
+From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
+Date: Thu, 16 Sep 2021 22:39:16 +0900
+Subject: Add GNU Hurd section
+
+---
+ CPP/Windows/System.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/CPP/Windows/System.cpp b/CPP/Windows/System.cpp
+index f8bc722..de98af7 100644
+--- a/CPP/Windows/System.cpp
++++ b/CPP/Windows/System.cpp
+@@ -205,6 +205,10 @@ bool GetRamSize(UInt64 &size)
+   
+   // fixme
+ 
++  #elif defined(__gnu_hurd__)
++
++  // fixme
++
+   #else
+ 
+   struct sysinfo info;
