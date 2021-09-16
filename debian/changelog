@@ -1,3 +1,14 @@
+7zip (21.03~beta+dfsg-4) unstable; urgency=medium
+
+  * Disable SHA hardware acceleration on armel
+  * Rename patch file
+  * Use pre-defined macro for ARM NEON code
+  * Add GNU Hurd section
+  * Add simple benchmark test for armhf
+  * Use pipe instead of intermediate files
+
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Fri, 17 Sep 2021 08:08:45 +0900
+
 7zip (21.03~beta+dfsg-3) unstable; urgency=medium
 
   [ YOKOTA Hiroshi ]
