@@ -10,14 +10,14 @@ armel dose not supports NEON instructions.
  3 files changed, 6 insertions(+)
 
 diff --git a/C/AesOpt.c b/C/AesOpt.c
-index 1bdc9a8..bce0410 100644
+index 1bdc9a8..d4ca36d 100644
 --- a/C/AesOpt.c
 +++ b/C/AesOpt.c
 @@ -508,6 +508,7 @@ VAES_COMPAT_STUB (AesCtr_Code_HW)
  
  #elif defined(MY_CPU_ARM_OR_ARM64) && defined(MY_CPU_LE)
  
-+ #ifndef DEBIAN_NO_HW_ACCEL
++ #ifdef __ARM_NEON__
    #if defined(__clang__)
      #if (__clang_major__ >= 8) // fix that check
        #define USE_HW_AES
@@ -30,14 +30,14 @@ index 1bdc9a8..bce0410 100644
  #ifdef USE_HW_AES
  
 diff --git a/C/Sha1Opt.c b/C/Sha1Opt.c
-index dcedfbc..805bd19 100644
+index dcedfbc..05dfa5e 100644
 --- a/C/Sha1Opt.c
 +++ b/C/Sha1Opt.c
 @@ -214,6 +214,7 @@ void MY_FAST_CALL Sha1_UpdateBlocks_HW(UInt32 state[5], const Byte *data, size_t
  
  #elif defined(MY_CPU_ARM_OR_ARM64)
  
-+ #ifndef DEBIAN_NO_HW_ACCEL
++ #ifdef __ARM_NEON__
    #if defined(__clang__)
      #if (__clang_major__ >= 8) // fix that check
        #define USE_HW_SHA
@@ -50,14 +50,14 @@ index dcedfbc..805bd19 100644
  #ifdef USE_HW_SHA
  
 diff --git a/C/Sha256Opt.c b/C/Sha256Opt.c
-index cc8c53e..65bf7b6 100644
+index cc8c53e..d7b324d 100644
 --- a/C/Sha256Opt.c
 +++ b/C/Sha256Opt.c
 @@ -214,6 +214,7 @@ void MY_FAST_CALL Sha256_UpdateBlocks_HW(UInt32 state[8], const Byte *data, size
  
  #elif defined(MY_CPU_ARM_OR_ARM64)
  
-+ #ifndef DEBIAN_NO_HW_ACCEL
++ #ifdef __ARM_NEON__
    #if defined(__clang__)
      #if (__clang_major__ >= 8) // fix that check
        #define USE_HW_SHA
