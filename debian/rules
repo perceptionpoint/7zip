@@ -10,10 +10,10 @@ include debian/arch-options.mak
 override_dh_auto_build:
 	$(MAKE) -C CPP/7zip/Bundles/Alone2 -f ../../cmpl_gcc.mak \
 		CROSS_COMPILE="$(DEB_HOST_GNU_TYPE)-" \
-		DEB_CFLAGS="$(CFLAGS)" \
-		DEB_CXXFLAGS="$(CXXFLAGS)" \
+		DEB_CFLAGS="$(CFLAGS) -pipe" \
+		DEB_CXXFLAGS="$(CXXFLAGS) -pipe" \
 		DEB_CPPFLAGS="$(CPPFLAGS)" \
-		DEB_LDFLAGS="$(LDFLAGS)"
+		DEB_LDFLAGS="$(LDFLAGS) -pipe"
 
 override_dh_auto_clean:
 	$(MAKE) -C CPP/7zip/Bundles/Alone2 -f ../../cmpl_gcc.mak clean
