@@ -4,5 +4,9 @@ Features: test-name=smoke
 Test-Command: 7zz
 Restrictions: superficial
 
-Features: test-name=benchmark
+Features: test-name=benchmark-simple
+Test-Command: 7zz b -bt
+
+Features: test-name=benchmark-full
 Test-Command: 7zz b "-mm=*" "-mmt=*" -bt
+Architecture: !armhf
