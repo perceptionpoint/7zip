@@ -5,4 +5,4 @@
 0005-Disable-hardware-acceleration-support-on-armel.patch
 0006-Use-getcwd-3-POSIX-extension-to-avoid-PATH_MAX-macro.patch
 0007-Define-UTIME_OMIT-if-not-defined-yet.patch
-0008-Add-dummy-GNU-Hurd-section-to-guess-RAM-size.patch
+0008-Add-dummy-sysinfo-2-section-to-guess-RAM-size.patch
