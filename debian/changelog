@@ -9,8 +9,10 @@
   * Use __ARM_NEON instead of __ARM_NEON__
   * Add more NEON fix
   * Rename patch file
+  * Add kFreeBSD fix to avoid sysinfo(2) usage
+  * Rename patch file
 
- -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Fri, 17 Sep 2021 08:08:45 +0900
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Fri, 17 Sep 2021 19:31:26 +0900
 
 7zip (21.03~beta+dfsg-3) unstable; urgency=medium
 
