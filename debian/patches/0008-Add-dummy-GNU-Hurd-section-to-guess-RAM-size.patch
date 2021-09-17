@@ -1,22 +1,26 @@
 From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
 Date: Thu, 16 Sep 2021 22:39:16 +0900
-Subject: Add dummy GNU Hurd section to guess RAM size
+Subject: Add dummy sysinfo(2) section to guess RAM size
 
-GNU Hurd doesn't have "sysinfo()".
+GNU Hurd and kFreeBSD doesn't have "sysinfo()".
 This function is Linux specific.
 ---
- CPP/Windows/System.cpp | 4 ++++
- 1 file changed, 4 insertions(+)
+ CPP/Windows/System.cpp | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/CPP/Windows/System.cpp b/CPP/Windows/System.cpp
-index f8bc722..de98af7 100644
+index f8bc722..c02123e 100644
 --- a/CPP/Windows/System.cpp
 +++ b/CPP/Windows/System.cpp
-@@ -205,6 +205,10 @@ bool GetRamSize(UInt64 &size)
+@@ -205,6 +205,14 @@ bool GetRamSize(UInt64 &size)
    
    // fixme
  
 +  #elif defined(__gnu_hurd__)
++
++  // fixme
++
++  #elif defined(__FreeBSD_kernel__) && defined(__GLIBC__)
 +
 +  // fixme
 +
