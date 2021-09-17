@@ -1,7 +1,9 @@
 From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
 Date: Thu, 16 Sep 2021 22:39:16 +0900
-Subject: Add GNU Hurd section
+Subject: Add dummy GNU Hurd section to guess RAM size
 
+GNU Hurd doesn't have "sysinfo()".
+This function is Linux specific.
 ---
  CPP/Windows/System.cpp | 4 ++++
  1 file changed, 4 insertions(+)
