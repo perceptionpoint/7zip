@@ -6,6 +6,9 @@
   * Add GNU Hurd section
   * Add simple benchmark test for armhf
   * Use pipe instead of intermediate files
+  * Use __ARM_NEON instead of __ARM_NEON__
+  * Add more NEON fix
+  * Rename patch file
 
  -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Fri, 17 Sep 2021 08:08:45 +0900
 
