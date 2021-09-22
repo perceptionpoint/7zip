@@ -1,3 +1,10 @@
+7zip (21.03~beta+dfsg-5) UNRELEASED; urgency=medium
+
+  * Update ARM NEON patch
+  * Use "__ARM_ARCH" to split "armel" and "armhf"
+
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Wed, 22 Sep 2021 20:45:13 +0900
+
 7zip (21.03~beta+dfsg-4) unstable; urgency=medium
 
   * Disable SHA hardware acceleration on armel
