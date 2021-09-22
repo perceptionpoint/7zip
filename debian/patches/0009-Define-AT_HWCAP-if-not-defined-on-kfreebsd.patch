@@ -1,0 +1,28 @@
+From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
+Date: Thu, 23 Sep 2021 02:06:11 +0900
+Subject: Define AT_HWCAP if not defined on kfreebsd
+
+---
+ CPP/Windows/SystemInfo.cpp | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/CPP/Windows/SystemInfo.cpp b/CPP/Windows/SystemInfo.cpp
+index e32aa27..06af454 100644
+--- a/CPP/Windows/SystemInfo.cpp
++++ b/CPP/Windows/SystemInfo.cpp
+@@ -20,6 +20,15 @@
+ 
+ #include <sys/auxv.h>
+ 
++#if defined(__FreeBSD_kernel__) && defined(__GLIBC__)
++ #ifndef AT_HWCAP
++  #define AT_HWCAP 16
++ #endif
++ #ifndef AT_HWCAP2
++  #define AT_HWCAP2 26
++ #endif
++#endif
++
+ #ifdef MY_CPU_ARM_OR_ARM64
+ #include <asm/hwcap.h>
+ #endif
