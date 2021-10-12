@@ -7,3 +7,4 @@
 0007-Define-UTIME_OMIT-if-not-defined-yet.patch
 0008-Add-dummy-sysinfo-2-section-to-guess-RAM-size.patch
 0009-Define-AT_HWCAP-if-not-defined-on-kfreebsd.patch
+0010-Typo-fix.patch

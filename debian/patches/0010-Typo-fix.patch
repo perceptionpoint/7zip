@@ -1,0 +1,50 @@
+From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
+Date: Wed, 13 Oct 2021 00:53:32 +0900
+Subject: Typo fix
+
+"unknow" -> "unknown"
+---
+ CPP/7zip/Archive/Udf/UdfIn.cpp | 2 +-
+ CPP/Windows/ErrorMsg.cpp       | 2 +-
+ CPP/Windows/FileName.cpp       | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/CPP/7zip/Archive/Udf/UdfIn.cpp b/CPP/7zip/Archive/Udf/UdfIn.cpp
+index 778ea6c..21ed5ec 100644
+--- a/CPP/7zip/Archive/Udf/UdfIn.cpp
++++ b/CPP/7zip/Archive/Udf/UdfIn.cpp
+@@ -109,7 +109,7 @@ static UString ParseDString(const Byte *data, unsigned size)
+       }
+     }
+     else
+-      return UString("[unknow]");
++      return UString("[unknown]");
+     *p = 0;
+     res.ReleaseBuf_SetLen((unsigned)(p - (const wchar_t *)res));
+   }
+diff --git a/CPP/Windows/ErrorMsg.cpp b/CPP/Windows/ErrorMsg.cpp
+index a1e1211..63bc93b 100644
+--- a/CPP/Windows/ErrorMsg.cpp
++++ b/CPP/Windows/ErrorMsg.cpp
+@@ -77,7 +77,7 @@ static bool MyFormatMessage(DWORD errorCode, UString &message)
+       break;
+   }
+ 
+-  /* strerror() for unknow errors still shows message "Unknown error -12345678")
++  /* strerror() for unknown errors still shows message "Unknown error -12345678")
+      So we must trasfer error codes before strerror() */
+   if (!s)
+   {
+diff --git a/CPP/Windows/FileName.cpp b/CPP/Windows/FileName.cpp
+index c573537..d34ac7d 100644
+--- a/CPP/Windows/FileName.cpp
++++ b/CPP/Windows/FileName.cpp
+@@ -716,7 +716,7 @@ static bool GetSuperPathBase(CFSTR s, UString &res)
+      true            false             *          use Super path
+      true            true             true        don't use any path, we already used mainPath
+      true            true             false       use main path as Super Path, we don't try mainMath
+-                                                  That case is possible now if GetCurDir returns unknow
++                                                  That case is possible now if GetCurDir returns unknown
+                                                   type of path (not drive and not network)
+ 
+   We can change that code if we want to try mainPath, if GetSuperPathBase returns error,
