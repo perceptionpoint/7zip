@@ -1,0 +1,94 @@
+From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
+Date: Wed, 13 Oct 2021 01:05:26 +0900
+Subject: GCC 11 wants "if" statement must guarded by {}
+
+---
+ C/XzDec.c                       |  9 ++++++---
+ C/XzIn.c                        |  9 ++++++---
+ CPP/7zip/Archive/XarHandler.cpp |  9 ++++++---
+ CPP/Common/MyCom.h              | 12 ++++++++----
+ 4 files changed, 26 insertions(+), 13 deletions(-)
+
+diff --git a/C/XzDec.c b/C/XzDec.c
+index d345f68..8158392 100644
+--- a/C/XzDec.c
++++ b/C/XzDec.c
+@@ -771,9 +771,12 @@ static BoolInt Xz_CheckFooter(CXzStreamFlags flags, UInt64 indexSize, const Byte
+       && buf[11] == XZ_FOOTER_SIG_1;
+ }
+ 
+-#define READ_VARINT_AND_CHECK(buf, pos, size, res) \
+-  { unsigned s = Xz_ReadVarInt(buf + pos, size - pos, res); \
+-  if (s == 0) return SZ_ERROR_ARCHIVE; pos += s; }
++#define READ_VARINT_AND_CHECK(buf, pos, size, res)		\
++  {								\
++    unsigned s = Xz_ReadVarInt(buf + pos, size - pos, res);	\
++    if (s == 0) { return SZ_ERROR_ARCHIVE; }			\
++    pos += s;							\
++  }
+ 
+ 
+ static BoolInt XzBlock_AreSupportedFilters(const CXzBlock *p)
+diff --git a/C/XzIn.c b/C/XzIn.c
+index 54d81c4..719402e 100644
+--- a/C/XzIn.c
++++ b/C/XzIn.c
+@@ -24,9 +24,12 @@ SRes Xz_ReadHeader(CXzStreamFlags *p, ISeqInStream *inStream)
+   return Xz_ParseHeader(p, sig);
+ }
+ 
+-#define READ_VARINT_AND_CHECK(buf, pos, size, res) \
+-  { unsigned s = Xz_ReadVarInt(buf + pos, size - pos, res); \
+-  if (s == 0) return SZ_ERROR_ARCHIVE; pos += s; }
++#define READ_VARINT_AND_CHECK(buf, pos, size, res)		\
++  {								\
++    unsigned s = Xz_ReadVarInt(buf + pos, size - pos, res);	\
++    if (s == 0) { return SZ_ERROR_ARCHIVE; }			\
++    pos += s;							\
++  }
+ 
+ SRes XzBlock_ReadHeader(CXzBlock *p, ISeqInStream *inStream, BoolInt *isIndex, UInt32 *headerSizeRes)
+ {
+diff --git a/CPP/7zip/Archive/XarHandler.cpp b/CPP/7zip/Archive/XarHandler.cpp
+index 2bced70..411e76b 100644
+--- a/CPP/7zip/Archive/XarHandler.cpp
++++ b/CPP/7zip/Archive/XarHandler.cpp
+@@ -149,9 +149,12 @@ static const Byte kProps[] =
+ IMP_IInArchive_Props
+ IMP_IInArchive_ArcProps
+ 
+-#define PARSE_NUM(_num_, _dest_) \
+-    { const char *end; _dest_ = ConvertStringToUInt32(p, &end); \
+-    if ((unsigned)(end - p) != _num_) return 0; p += _num_ + 1; }
++#define PARSE_NUM(_num_, _dest_)					\
++  {									\
++    const char *end; _dest_ = ConvertStringToUInt32(p, &end);		\
++    if ((unsigned)(end - p) != _num_) { return 0; }			\
++    p += _num_ + 1;							\
++  }
+ 
+ static bool ParseUInt64(const CXmlItem &item, const char *name, UInt64 &res)
+ {
+diff --git a/CPP/Common/MyCom.h b/CPP/Common/MyCom.h
+index a29213d..b235a4c 100644
+--- a/CPP/Common/MyCom.h
++++ b/CPP/Common/MyCom.h
+@@ -228,10 +228,14 @@ public:
+ 
+ #define MY_QUERYINTERFACE_END else return E_NOINTERFACE; ++__m_RefCount; /* AddRef(); */ return S_OK; }
+ 
+-#define MY_ADDREF_RELEASE \
+-STDMETHOD_(ULONG, AddRef)() throw() { return ++__m_RefCount; } \
+-STDMETHOD_(ULONG, Release)() { if (--__m_RefCount != 0)  \
+-  return __m_RefCount; delete this; return 0; }
++#define MY_ADDREF_RELEASE						\
++  STDMETHOD_(ULONG, AddRef)() throw() { return ++__m_RefCount; }	\
++  STDMETHOD_(ULONG, Release)()						\
++  {									\
++    if (--__m_RefCount != 0) { return __m_RefCount; }			\
++    delete this;							\
++    return 0;								\
++  }
+ 
+ #define MY_UNKNOWN_IMP_SPEC(i) \
+   MY_QUERYINTERFACE_BEGIN \

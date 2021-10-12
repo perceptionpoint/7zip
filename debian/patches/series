@@ -8,3 +8,4 @@
 0008-Add-dummy-sysinfo-2-section-to-guess-RAM-size.patch
 0009-Define-AT_HWCAP-if-not-defined-on-kfreebsd.patch
 0010-Typo-fix.patch
+0011-GCC-11-wants-if-statement-must-guarded-by.patch
