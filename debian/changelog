@@ -1,3 +1,13 @@
+7zip (21.03~beta+dfsg-6) UNRELEASED; urgency=medium
+
+  * Add upstream metadata
+  * Add upstream change log to metadata
+  * Typo fix
+  * GCC 11 wants "if" statement must guarded by {}
+  * Guard ARM v8 feature from old architecture
+
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Wed, 13 Oct 2021 08:14:39 +0900
+
 7zip (21.03~beta+dfsg-5) unstable; urgency=medium
 
   * Update ARM NEON patch
