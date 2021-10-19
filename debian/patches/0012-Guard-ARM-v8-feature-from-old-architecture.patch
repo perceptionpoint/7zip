@@ -2,6 +2,7 @@ From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
 Date: Wed, 13 Oct 2021 07:59:13 +0900
 Subject: Guard ARM v8 feature from old architecture
 
+Forwarded: not-needed
 ---
  C/7zCrc.c | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
