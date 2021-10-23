@@ -3,10 +3,10 @@
   * Add upstream metadata
   * Add upstream change log to metadata
   * Typo fix
-  * GCC 11 wants "if" statement must guarded by {}
+  * GCC 11 wants "if" statement must guarded by {} (Closes: #997097)
   * Guard ARM v8 feature from old architecture
 
- -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Wed, 13 Oct 2021 08:20:46 +0900
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Sat, 23 Oct 2021 21:41:54 +0200
 
 7zip (21.03~beta+dfsg-5) unstable; urgency=medium
 
