@@ -1,8 +1,14 @@
 7zip (21.04~beta+dfsg-1) UNRELEASED; urgency=medium
 
   * Use dpkg snippet to get cross-build environment
+  * New upstream version 21.04~beta+dfsg
+  * Refresh patch queue
+  * Reorder patch
+  * Patch is once forwarded to upstream
+  * Rename patch
+  * Renumber patch
 
- -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Wed, 03 Nov 2021 11:36:05 +0900
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Wed, 03 Nov 2021 14:44:05 +0900
 
 7zip (21.03~beta+dfsg-6) unstable; urgency=medium
 
