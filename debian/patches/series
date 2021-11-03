@@ -4,4 +4,4 @@
 0005-Disable-hardware-acceleration-support-on-armel.patch
 0012-Guard-ARM-v8-feature-from-old-architecture.patch
 0006-Use-getcwd-3-POSIX-extension-to-avoid-PATH_MAX-macro.patch
-0009-Define-AT_HWCAP-if-not-defined-on-kfreebsd.patch
+0009-Remove-unused-hwcap-usage-for-kfreebsd.patch
