@@ -1,4 +1,4 @@
-7zip (21.04~beta+dfsg-1) UNRELEASED; urgency=medium
+7zip (21.04~beta+dfsg-1) unstable; urgency=medium
 
   * Use dpkg snippet to get cross-build environment
   * New upstream version 21.04~beta+dfsg
