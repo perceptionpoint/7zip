@@ -2,77 +2,38 @@ From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
 Date: Wed, 15 Sep 2021 00:02:36 +0900
 Subject: Use getcwd(3) POSIX extension to avoid PATH_MAX macro
 
+Forwarded: not-needed
+
 This fix helps GNU Hurd.
 ---
- CPP/Windows/FileDir.cpp  | 15 +++++----------
- CPP/Windows/FileName.cpp | 15 +++++----------
- 2 files changed, 10 insertions(+), 20 deletions(-)
+ CPP/Windows/FileDir.cpp | 13 +------------
+ 1 file changed, 1 insertion(+), 12 deletions(-)
 
 diff --git a/CPP/Windows/FileDir.cpp b/CPP/Windows/FileDir.cpp
-index de8ec63..2e902f2 100644
+index 1884e2a..a19d9c7 100644
 --- a/CPP/Windows/FileDir.cpp
 +++ b/CPP/Windows/FileDir.cpp
-@@ -4,6 +4,7 @@
- 
- 
- #ifndef _WIN32
-+#include <cstdlib>
- #include <stdio.h>
- #include <errno.h>
- #include <limits.h>
-@@ -882,17 +883,11 @@ bool GetCurrentDir(FString &path)
+@@ -883,22 +883,11 @@ bool GetCurrentDir(FString &path)
  {
    path.Empty();
  
 -  #define MY__PATH_MAX  PATH_MAX
 -  // #define MY__PATH_MAX  1024
-+  char *res = getcwd(nullptr, 0);
- 
+-
 -  char s[MY__PATH_MAX + 1];
 -  char *res = getcwd(s, MY__PATH_MAX);
--  if (!res)
+-  if (res)
 -  {
--    // if (errno != ERANGE)
--      return false;
+-    path = fas2fs(s);
+-    return true;
 -  }
--  path = fas2fs(s);
-+  path = fas2fs(res);
-+
-+  std::free(res);
-   return true;
- }
- 
-diff --git a/CPP/Windows/FileName.cpp b/CPP/Windows/FileName.cpp
-index c3ff854..c573537 100644
---- a/CPP/Windows/FileName.cpp
-+++ b/CPP/Windows/FileName.cpp
-@@ -3,6 +3,7 @@
- #include "StdAfx.h"
- 
- #ifndef _WIN32
-+#include <cstdlib>
- #include <limits.h>
- #include <unistd.h>
- #include "../Common/StringConvert.h"
-@@ -391,17 +392,11 @@ static bool GetCurDir(UString &path)
- 
-   #else
- 
--  #define MY__PATH_MAX  PATH_MAX
--  // #define MY__PATH_MAX  1024
-+  char *res = getcwd(nullptr, 0);
- 
--  char s[MY__PATH_MAX + 1];
--  char *res = getcwd(s, MY__PATH_MAX);
--  if (!res)
--  {
--    // if (errno != ERANGE)
--      return false;
--  }
--  path = GetUnicodeString(s);
-+  path = GetUnicodeString(res);
-+
-+  std::free(res);
-   return true;
- 
-   #endif
+   {
+-    // if (errno != ERANGE) return false;
+     #if defined(__GLIBC__) || defined(__APPLE__)
+     /* As an extension to the POSIX.1-2001 standard, glibc's getcwd()
+        allocates the buffer dynamically using malloc(3) if buf is NULL. */
+-    res = getcwd(NULL, 0);
++    char *res = getcwd(NULL, 0);
+     if (res)
+     {
+       path = fas2fs(res);

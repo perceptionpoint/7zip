@@ -1,0 +1,32 @@
+From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
+Date: Thu, 23 Sep 2021 02:06:11 +0900
+Subject: Remove unused hwcap usage for kfreebsd
+
+7zip now works without hwcap on kfreebsd
+---
+ CPP/Windows/SystemInfo.cpp | 12 ------------
+ 1 file changed, 12 deletions(-)
+
+diff --git a/CPP/Windows/SystemInfo.cpp b/CPP/Windows/SystemInfo.cpp
+index 88e1c74..cbd977c 100644
+--- a/CPP/Windows/SystemInfo.cpp
++++ b/CPP/Windows/SystemInfo.cpp
+@@ -23,18 +23,6 @@
+ // #undef AT_HWCAP    // to debug
+ // #undef AT_HWCAP2   // to debug
+ 
+-/* the following patch for some debian systems.
+-   Is it OK to define AT_HWCAP and AT_HWCAP2 here with these constant numbers? */
+- 
+-#if defined(__FreeBSD_kernel__) && defined(__GLIBC__)
+-  #ifndef AT_HWCAP
+-    #define AT_HWCAP 16
+-  #endif
+-  #ifndef AT_HWCAP2
+-    #define AT_HWCAP2 26
+-  #endif
+-#endif
+-
+ 
+ #ifdef MY_CPU_ARM_OR_ARM64
+ #include <asm/hwcap.h>
