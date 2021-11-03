@@ -2,6 +2,8 @@ From: YOKOTA Hiroshi <yokota.hgml@gmail.com>
 Date: Wed, 15 Sep 2021 00:02:36 +0900
 Subject: Use getcwd(3) POSIX extension to avoid PATH_MAX macro
 
+Forwarded: not-needed
+
 This fix helps GNU Hurd.
 ---
  CPP/Windows/FileDir.cpp | 13 +------------
