@@ -1,8 +1,9 @@
 7zip (21.06+dfsg-1) UNRELEASED; urgency=medium
 
-  * New upstream release
+  * New upstream version 21.06+dfsg
+  * Rediff patches
 
- -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Fri, 26 Nov 2021 08:14:53 +0900
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Fri, 26 Nov 2021 12:50:18 +0900
 
 7zip (21.04~beta+dfsg-1) unstable; urgency=medium
 
