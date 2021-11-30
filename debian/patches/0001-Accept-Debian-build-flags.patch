@@ -8,10 +8,10 @@ Forwarded: not-needed
  1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/CPP/7zip/7zip_gcc.mak b/CPP/7zip/7zip_gcc.mak
-index bef6a64..12cd42e 100644
+index 5fa03e7..0a7c02d 100644
 --- a/CPP/7zip/7zip_gcc.mak
 +++ b/CPP/7zip/7zip_gcc.mak
-@@ -72,7 +72,7 @@ endif
+@@ -73,7 +73,7 @@ endif
  
  else
  
@@ -20,7 +20,7 @@ index bef6a64..12cd42e 100644
  # -s is not required for clang, do we need it for GGC ???
  # -s
  
-@@ -120,7 +120,7 @@ endif
+@@ -121,7 +121,7 @@ endif
  
  
  
@@ -29,21 +29,21 @@ index bef6a64..12cd42e 100644
  
  
  ifdef IS_MINGW
-@@ -148,7 +148,7 @@ CXX_WARN_FLAGS =
+@@ -149,7 +149,7 @@ CXX_WARN_FLAGS =
  #-Wno-invalid-offsetof
  #-Wno-reorder
  
 -CXXFLAGS = $(MY_ARCH_2) $(LOCAL_FLAGS) $(CXXFLAGS_BASE2) $(CFLAGS_BASE) $(CXXFLAGS_EXTRA) $(CC_SHARED) -o $@ $(CXX_WARN_FLAGS)
 +CXXFLAGS = $(DEB_CXXFLAGS) $(DEB_CPPFLAGS) $(MY_ARCH_2) $(LOCAL_FLAGS) $(CXXFLAGS_BASE2) $(CFLAGS_BASE) $(CXXFLAGS_EXTRA) $(CC_SHARED) -o $@ $(CXX_WARN_FLAGS)
  
- all: $(O) $(PROGPATH)
- 
-@@ -156,7 +156,7 @@ $(O):
+ STATIC_TARGET=
+ ifdef COMPL_STATIC
+@@ -162,7 +162,7 @@ all: $(O) $(PROGPATH) $(STATIC_TARGET)
+ $(O):
  	$(MY_MKDIR) $(O)
  
+-LFLAGS_ALL = -s $(MY_ARCH_2) $(LDFLAGS) $(LD_arch) $(OBJS) $(MY_LIBS) $(LIB2)
++LFLAGS_ALL = $(MY_ARCH_2) $(LDFLAGS) $(LD_arch) $(OBJS) $(MY_LIBS) $(LIB2)
  $(PROGPATH): $(OBJS)
--	$(CXX) -o $(PROGPATH) -s $(MY_ARCH_2) $(LDFLAGS) $(LD_arch) $(OBJS) $(MY_LIBS) $(LIB2)
-+	$(CXX) -o $(PROGPATH) $(MY_ARCH_2) $(LDFLAGS) $(LD_arch) $(OBJS) $(MY_LIBS) $(LIB2)
- 
- #	-s strips debug sections from executable in GCC
+ 	$(CXX) -o $(PROGPATH) $(LFLAGS_ALL)
  
