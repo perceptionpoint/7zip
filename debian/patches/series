@@ -1,5 +1,4 @@
 0001-Accept-Debian-build-flags.patch
-0002-Drop-unRAR-code-to-keep-DFSG.patch
 0003-Use-GCC-10-warning-options.patch
 0004-Disable-hardware-acceleration-support-on-armel.patch
 0005-Guard-ARM-v8-feature-from-old-architecture.patch
