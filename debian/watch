@@ -1,7 +1,7 @@
 # -*- mode: conf -*-
 version=4
-opts="dversionmangle=s/\+dfsg$//, \
-      uversionmangle=s/(\d{2})(\d{2})/$1.$2/, \
+opts="uversionmangle=s/(\d{2})(\d{2})/$1.$2/, \
+      dversionmangle=s/\+dfsg$//, \
       oversionmangle=s/$/+dfsg/, \
       pgpmode=none" \
 https://www.7-zip.org/download.html a/7z(\d{4})-src\.tar\.xz
