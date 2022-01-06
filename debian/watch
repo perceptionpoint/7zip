@@ -2,5 +2,6 @@
 version=4
 opts="dversionmangle=s/(?:~(?:alpha|beta))?\+dfsg\d*$//, \
       uversionmangle=s/(\d{2})(\d{2})/$1.$2/, \
+      oversionmangle=s/$/+dfsg/, \
       pgpmode=none" \
 https://www.7-zip.org/download.html a/7z(\d{4})-src\.tar\.xz
