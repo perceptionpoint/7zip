@@ -3,3 +3,4 @@
 0003-Disable-hardware-acceleration-support-on-armel.patch
 0004-Guard-ARM-v8-feature-from-old-architecture.patch
 0005-Use-getcwd-3-POSIX-extension-to-avoid-PATH_MAX-macro.patch
+0006-Disable-local-echo-display-when-in-input-passwords-C.patch
