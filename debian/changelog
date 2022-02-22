@@ -1,8 +1,8 @@
-7zip (21.07+dfsg-3) UNRELEASED; urgency=medium
+7zip (21.07+dfsg-3) unstable; urgency=medium
 
   * Disable local echo display when in input passwords (Closes: #1006238)
 
- -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Tue, 22 Feb 2022 21:15:11 +0900
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Tue, 22 Feb 2022 22:14:45 +0900
 
 7zip (21.07+dfsg-2) unstable; urgency=medium
 
