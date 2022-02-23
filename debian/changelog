@@ -1,3 +1,9 @@
+7zip (21.07+dfsg-4) UNRELEASED; urgency=medium
+
+  * More generalize STDIN handling when in password input
+
+ -- YOKOTA Hiroshi <yokota.hgml@gmail.com>  Wed, 23 Feb 2022 17:15:40 +0900
+
 7zip (21.07+dfsg-3) unstable; urgency=medium
 
   * Disable local echo display when in input passwords (Closes: #1006238)
