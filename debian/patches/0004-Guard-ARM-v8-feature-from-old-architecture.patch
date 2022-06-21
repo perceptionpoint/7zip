@@ -8,7 +8,7 @@ Forwarded: not-needed
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/C/7zCrc.c b/C/7zCrc.c
-index c7ec353..230d8a5 100644
+index c7ec353..230d8a5 100755
 --- a/C/7zCrc.c
 +++ b/C/7zCrc.c
 @@ -81,8 +81,9 @@ UInt32 MY_FAST_CALL CrcUpdateT1(UInt32 v, const void *data, size_t size, const U

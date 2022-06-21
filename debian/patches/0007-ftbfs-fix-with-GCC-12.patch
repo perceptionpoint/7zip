@@ -19,7 +19,7 @@ x86_64-linux-gnu-gcc -g -O2 -ffile-prefix-map=/<<PKGBUILDDIR>>=. -fstack-protect
  1 file changed, 7 insertions(+), 2 deletions(-)
 
 diff --git a/C/LzmaEnc.c b/C/LzmaEnc.c
-index 5705506..f62552b 100644
+index 5705506..f62552b 100755
 --- a/C/LzmaEnc.c
 +++ b/C/LzmaEnc.c
 @@ -2995,16 +2995,21 @@ SRes LzmaEnc_CodeOneMemBlock(CLzmaEncHandle pp, BoolInt reInit,

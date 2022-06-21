@@ -18,7 +18,7 @@ __ARM_ARCH:
  7 files changed, 14 insertions(+)
 
 diff --git a/C/Aes.c b/C/Aes.c
-index 9ad66c5..2af4298 100644
+index 9ad66c5..2af4298 100755
 --- a/C/Aes.c
 +++ b/C/Aes.c
 @@ -56,6 +56,7 @@ static Byte InvS[256];
@@ -38,7 +38,7 @@ index 9ad66c5..2af4298 100644
  
  #ifdef USE_HW_AES
 diff --git a/C/AesOpt.c b/C/AesOpt.c
-index 1bdc9a8..60058bc 100644
+index 1bdc9a8..60058bc 100755
 --- a/C/AesOpt.c
 +++ b/C/AesOpt.c
 @@ -508,6 +508,7 @@ VAES_COMPAT_STUB (AesCtr_Code_HW)
@@ -58,7 +58,7 @@ index 1bdc9a8..60058bc 100644
  #ifdef USE_HW_AES
  
 diff --git a/C/Sha1.c b/C/Sha1.c
-index 7adeb44..b6ee739 100644
+index 7adeb44..b6ee739 100755
 --- a/C/Sha1.c
 +++ b/C/Sha1.c
 @@ -33,6 +33,7 @@ This code is based on public domain code of Steve Reid from Wei Dai's Crypto++ l
@@ -78,7 +78,7 @@ index 7adeb44..b6ee739 100644
  
  void MY_FAST_CALL Sha1_UpdateBlocks(UInt32 state[5], const Byte *data, size_t numBlocks);
 diff --git a/C/Sha1Opt.c b/C/Sha1Opt.c
-index dcedfbc..574d469 100644
+index dcedfbc..574d469 100755
 --- a/C/Sha1Opt.c
 +++ b/C/Sha1Opt.c
 @@ -214,6 +214,7 @@ void MY_FAST_CALL Sha1_UpdateBlocks_HW(UInt32 state[5], const Byte *data, size_t
@@ -98,7 +98,7 @@ index dcedfbc..574d469 100644
  #ifdef USE_HW_SHA
  
 diff --git a/C/Sha256.c b/C/Sha256.c
-index c03b75a..e997ad4 100644
+index c03b75a..e997ad4 100755
 --- a/C/Sha256.c
 +++ b/C/Sha256.c
 @@ -33,6 +33,7 @@ This code is based on public domain code from Wei Dai's Crypto++ library. */
@@ -118,7 +118,7 @@ index c03b75a..e997ad4 100644
  
  void MY_FAST_CALL Sha256_UpdateBlocks(UInt32 state[8], const Byte *data, size_t numBlocks);
 diff --git a/C/Sha256Opt.c b/C/Sha256Opt.c
-index cc8c53e..b13cf7b 100644
+index cc8c53e..b13cf7b 100755
 --- a/C/Sha256Opt.c
 +++ b/C/Sha256Opt.c
 @@ -214,6 +214,7 @@ void MY_FAST_CALL Sha256_UpdateBlocks_HW(UInt32 state[8], const Byte *data, size
@@ -138,7 +138,7 @@ index cc8c53e..b13cf7b 100644
  #ifdef USE_HW_SHA
  
 diff --git a/CPP/7zip/Crypto/MyAes.cpp b/CPP/7zip/Crypto/MyAes.cpp
-index 7e7cced..0df7b2f 100644
+index 7e7cced..0df7b2f 100755
 --- a/CPP/7zip/Crypto/MyAes.cpp
 +++ b/CPP/7zip/Crypto/MyAes.cpp
 @@ -86,6 +86,7 @@ STDMETHODIMP CAesCoder::SetInitVector(const Byte *data, UInt32 size)

@@ -10,10 +10,10 @@ This fix helps GNU Hurd.
  1 file changed, 1 insertion(+), 12 deletions(-)
 
 diff --git a/CPP/Windows/FileDir.cpp b/CPP/Windows/FileDir.cpp
-index c2c748b..30f451e 100644
+index 5e95204..9b5394e 100755
 --- a/CPP/Windows/FileDir.cpp
 +++ b/CPP/Windows/FileDir.cpp
-@@ -883,22 +883,11 @@ bool GetCurrentDir(FString &path)
+@@ -906,22 +906,11 @@ bool GetCurrentDir(FString &path)
  {
    path.Empty();
  
