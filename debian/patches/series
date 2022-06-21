@@ -5,3 +5,4 @@
 0005-Use-getcwd-3-POSIX-extension-to-avoid-PATH_MAX-macro.patch
 0006-Disable-local-echo-display-when-in-input-passwords-C.patch
 0007-ftbfs-fix-with-GCC-12.patch
+0008-Initialize-uninitialized-value.patch
