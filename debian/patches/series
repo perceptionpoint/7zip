@@ -6,3 +6,5 @@
 0006-Disable-local-echo-display-when-in-input-passwords-C.patch
 0007-ftbfs-fix-with-GCC-12.patch
 0008-Initialize-uninitialized-value.patch
+0009-Support-UDF-2.00.patch
+0010-Support-UDF-2.50-metadata-partitions.patch
